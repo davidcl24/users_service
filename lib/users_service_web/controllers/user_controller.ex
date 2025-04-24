@@ -3,6 +3,7 @@ defmodule UsersServiceWeb.UserController do
 
   alias UsersService.Users
   alias UsersService.Users.User
+  alias UsersService.Auth
 
   action_fallback UsersServiceWeb.FallbackController
 
@@ -13,10 +14,11 @@ defmodule UsersServiceWeb.UserController do
 
   def create(conn, %{"user" => user_params}) do
     with {:ok, %User{} = user} <- Users.create_user(user_params) do
+      token = Auth.generate_token(user)
       conn
       |> put_status(:created)
       |> put_resp_header("location", ~p"/api/users/#{user}")
-      |> render(:show, user: user)
+      |> render(:show_with_token, user: user, token: token)
     end
   end
 
