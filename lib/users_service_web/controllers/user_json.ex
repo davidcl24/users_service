@@ -18,10 +18,10 @@ defmodule UsersServiceWeb.UserJSON do
   @doc"""
   Renders the user just created with the JWT Token.
   """
-  def show_with_token(%{user: user, token: token}) do
+  def show_with_token(%{user: user, tokens: tokens}) do
     %{
       data: data(user),
-      token: token
+      tokens: tokens
     }
   end
 

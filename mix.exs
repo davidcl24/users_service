@@ -56,6 +56,7 @@ defmodule UsersService.MixProject do
       {:comeonin, "~> 5.3"},
       {:pbkdf2_elixir, "~> 1.4"},
       {:joken, "~> 2.5"},
+      {:plug_cowboy, "~> 2.0"}
     ]
   end
 

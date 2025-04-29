@@ -8,7 +8,8 @@ defmodule UsersServiceWeb.Endpoint do
     store: :cookie,
     key: "_users_service_key",
     signing_salt: "3I/VKlrX",
-    same_site: "Lax"
+    same_site: "Lax",
+    secure: true
   ]
 
   socket "/live", Phoenix.LiveView.Socket,

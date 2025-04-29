@@ -14,11 +14,27 @@ defmodule UsersServiceWeb.UserController do
 
   def create(conn, %{"user" => user_params}) do
     with {:ok, %User{} = user} <- Users.create_user(user_params) do
-      token = Auth.generate_token(user)
+      tokens = Auth.generate_tokens(user)
       conn
+      |> Plug.Conn.put_resp_cookie(
+           "access_token",
+           tokens.access_token,
+           http_only: true,
+           secure: true,
+           same_site: "Lax",
+           max_age: 45 * 60
+         )
+      |> Plug.Conn.put_resp_cookie(
+           "refresh_token",
+           tokens.refresh_token,
+           http_only: true,
+           secure: true,
+           same_site: "Lax",
+           max_age: 7 * 24 * 60 * 60
+         )
       |> put_status(:created)
       |> put_resp_header("location", ~p"/api/users/#{user}")
-      |> render(:show_with_token, user: user, token: token)
+      |> render(:show, user: user)
     end
   end
 
