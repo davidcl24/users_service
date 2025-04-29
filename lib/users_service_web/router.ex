@@ -7,6 +7,9 @@ defmodule UsersServiceWeb.Router do
 
   scope "/api", UsersServiceWeb do
     pipe_through :api
+    post "/login", AuthController, :login
+    post "/logout", AuthController, :logout
+    post "/refresh", AuthController, :refresh
     resources "/users", UserController, except: [:new, :edit]
   end
 

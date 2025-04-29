@@ -5,11 +5,11 @@ defmodule UsersService.Auth do
 
 
 
-  def authenticate_user(username, password) do
-    query = from(u in User, where: u.username == ^username)
+  def authenticate_user(email, password) do
+    query = from(u in User, where: u.email == ^email)
     case Repo.one(query) do
       nil -> Pbkdf2.no_user_verify()
-             {:error, :invalid_username}
+             {:error, :invalid_email}
 
       user ->
         if (Pbkdf2.verify_pass(password, user.password_hash)) do
