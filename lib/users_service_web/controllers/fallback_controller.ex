@@ -21,4 +21,10 @@ defmodule UsersServiceWeb.FallbackController do
     |> put_view(html: UsersServiceWeb.ErrorHTML, json: UsersServiceWeb.ErrorJSON)
     |> render(:"404")
   end
+
+  def call(conn, {:error, :unauthorized}) do
+    conn
+    |> put_status(:unauthorized)
+    |> json(%{error: "Unauthorized"})
+  end
 end
