@@ -2,11 +2,11 @@ import Config
 
 # Configure your database
 config :users_service, UsersService.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "db",
-  port: 5432,
+  username: System.get_env("DB_USERNAME", "default"),
+  password: System.get_env("DB_PASSWORD", "example"),
+  hostname: System.get_env("DB_HOST", "localhost"),
+  database: System.get_env("DB_DATABASE", "db"),
+  port: System.get_env("DB_PORT", "5432") |> String.to_integer(),
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
