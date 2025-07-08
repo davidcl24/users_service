@@ -45,7 +45,6 @@ defmodule UsersServiceWeb.AuthController do
 
   def refresh(conn, _params) do
     user_id = Plug.Conn.get_req_header(conn, "x-user-id") |> List.first()
-    refresh_token = Plug.Conn.get_req_header(conn, "x-refresh-token") |> List.first()
 
     if user_id == nil do
       {:error, :unauthorized}
