@@ -8,8 +8,8 @@ defmodule UsersService.Users.User do
     field :password_hash, :string
     field :password, :string, virtual: true
     field :signup_date, :date
-
-    timestamps(type: :utc_datetime)
+    field :updated_at, :date
+    #timestamps(type: :utc_datetime)
   end
 
   @doc false
