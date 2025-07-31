@@ -17,7 +17,7 @@ defmodule UsersService.Users.User do
     user
     |> cast(attrs, [:username, :email, :password, :signup_date])
     |> validate_required([:username, :email, :password, :signup_date])
-    |> unique_constraint(:email)
+    |> unique_constraint(:email, name: :users_email_key)
     |> put_password_hash()
   end
 
