@@ -33,6 +33,7 @@ defmodule UsersService.Auth do
       "sub" => user.id,
       "username" => user.username,
       "email" => user.email,
+      "role" => user.role,
       "type" => "access"
     }
 
