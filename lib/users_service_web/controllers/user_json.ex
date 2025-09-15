@@ -30,7 +30,8 @@ defmodule UsersServiceWeb.UserJSON do
       id: user.id,
       username: user.username,
       email: user.email,
-      signup_date: user.signup_date
+      signup_date: user.signup_date,
+      role: user.role
     }
   end
 end

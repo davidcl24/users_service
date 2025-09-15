@@ -7,6 +7,7 @@ defmodule UsersService.Users.User do
     field :email, :string
     field :password_hash, :string
     field :password, :string, virtual: true
+    field :role, :string
     field :signup_date, :date
     field :updated_at, :date
     #timestamps(type: :utc_datetime)
@@ -15,8 +16,8 @@ defmodule UsersService.Users.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:username, :email, :password, :signup_date])
-    |> validate_required([:username, :email, :password, :signup_date])
+    |> cast(attrs, [:username, :email, :password, :role, :signup_date])
+    |> validate_required([:username, :email, :password, :role, :signup_date])
     |> unique_constraint(:email, name: :users_email_key)
     |> put_password_hash()
   end
