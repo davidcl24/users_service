@@ -40,10 +40,10 @@ RUN apk add --no-cache openssl ncurses-libs
 WORKDIR /app
 
 # Copiar el release generado
-COPY --from=build /app/_build/prod/rel/* ./rel_app/
+COPY --from=build /app/_build/prod/rel/* ./users_service/
 
 # Exponer el puerto de Phoenix
 EXPOSE 4000
 
 # Iniciar la aplicación
-CMD ["./rel_app/bin/rel_app", "start"]
+CMD ["./users_service/bin/users_service", "start"]
