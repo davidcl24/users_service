@@ -21,10 +21,6 @@ RUN mix deps.get --only prod
 # Copiar todo el proyecto
 COPY . .
 
-# Compilar assets si existen (webpack, tailwind, esbuild, etc)
-RUN npm --prefix assets install --production=false
-RUN npm --prefix assets run build
-
 # Compilar el release de Phoenix
 RUN MIX_ENV=prod mix assets.deploy
 RUN MIX_ENV=prod mix release
