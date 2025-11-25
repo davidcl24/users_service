@@ -1,4 +1,5 @@
 # UsersService
+This service manages the creation, update and authentication of users in a streaming app
 
 To start your Phoenix server:
 
