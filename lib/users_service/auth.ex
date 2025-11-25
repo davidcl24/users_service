@@ -1,10 +1,15 @@
 defmodule UsersService.Auth do
+  @moduledoc """
+This module contains all of the functions for the user authentication
+"""
   alias UsersService.Users.User
   alias UsersService.Repo
   import Ecto.Query
 
 
-
+  @doc """
+  It authenticates if the email and password received are correct
+  """
   def authenticate_user(email, password) do
     query = from(u in User, where: u.email == ^email)
     case Repo.one(query) do
@@ -20,6 +25,9 @@ defmodule UsersService.Auth do
       end
   end
 
+  @doc """
+  It generates a new pair of tokens for de received user
+  """
   def generate_tokens(user) do
     secret = Application.get_env(:users_service, UsersServiceWeb.Endpoint)[:secret_key_base]
     signer = Joken.Signer.create("HS256", secret)

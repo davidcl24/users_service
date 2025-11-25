@@ -1,4 +1,7 @@
 defmodule UsersServiceWeb.UserController do
+  @moduledoc """
+  This controllers manages all of the requests for the Users CRUD
+  """
   use UsersServiceWeb, :controller
 
   alias UsersService.Users
@@ -7,11 +10,17 @@ defmodule UsersServiceWeb.UserController do
 
   action_fallback UsersServiceWeb.FallbackController
 
+  @doc """
+  It retrieves a list of all existing users and returns it as JSON
+  """
   def index(conn, _params) do
     users = Users.list_users()
     render(conn, :index, users: users)
   end
 
+  @doc """
+  It creates a new user with the received params and returns a pair of tokens as cookies
+  """
   def create(conn, %{"user" => user_params}) do
     with {:ok, %User{} = user} <- Users.create_user(user_params) do
       tokens = Auth.generate_tokens(user)
@@ -43,6 +52,9 @@ defmodule UsersServiceWeb.UserController do
     render(conn, :show, user: user)
   end
 
+  @doc """
+  It updates an existing user with the received params
+  """
   def update(conn, %{"id" => id, "user" => user_params}) do
     user = Users.get_user!(id)
 
@@ -51,6 +63,9 @@ defmodule UsersServiceWeb.UserController do
     end
   end
 
+  @doc """
+  It removes an existing user
+  """
   def delete(conn, %{"id" => id}) do
     user = Users.get_user!(id)
 

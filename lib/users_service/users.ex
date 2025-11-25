@@ -1,6 +1,6 @@
 defmodule UsersService.Users do
   @moduledoc """
-  The Users context.
+  The Users context. It contains all of the CRUD operations for Users
   """
 
   import Ecto.Query, warn: false

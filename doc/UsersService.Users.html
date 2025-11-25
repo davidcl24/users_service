@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.39.1">
+    <meta name="project" content="users_service v0.1.0">
+
+
+    <title>UsersService.Users — users_service v0.1.0</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-ZFNMEJKT.css" />
+
+    <script defer src="dist/sidebar_items-2682CFF2.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-HBZYRXZS.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
+users_service
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-module" id="main" data-type="modules">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of users_service</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">UsersService.Users</span> 
+      <small class="app-vsn" translate="no">(users_service v0.1.0)</small>
+
+    </h1>
+
+  </div>
+
+
+    <section id="moduledoc">
+<p>The Users context. It contains all of the CRUD operations for Users</p>
+    </section>
+
+</div>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#change_user/2" data-no-tooltip="" translate="no">change_user(user, attrs \\ %{})</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking user changes.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create_user/1" data-no-tooltip="" translate="no">create_user(attrs \\ %{})</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Creates a user.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#delete_user/1" data-no-tooltip="" translate="no">delete_user(user)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Deletes a user.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_user!/1" data-no-tooltip="" translate="no">get_user!(id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Gets a single user.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#list_users/0" data-no-tooltip="" translate="no">list_users()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the list of users.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update_user/2" data-no-tooltip="" translate="no">update_user(user, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates a user.</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+
+    <div class="functions-list">
+<section class="detail" id="change_user/2">
+
+    <span id="change_user/1"></span>
+
+  <div class="detail-header">
+    <a href="#change_user/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">change_user(user, attrs \\ %{})</h1>
+
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking user changes.</p><h2 id="change_user/2-examples" class="section-heading"><a href="#change_user/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">change_user</span><span class="p" data-group-id="3060442903-1">(</span><span class="n">user</span><span class="p" data-group-id="3060442903-1">)</span><span class="w">
+</span><span class="p" data-group-id="3060442903-2">%</span><span class="nc" data-group-id="3060442903-2">Ecto.Changeset</span><span class="p" data-group-id="3060442903-2">{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3060442903-3">%</span><span class="nc" data-group-id="3060442903-3">User</span><span class="p" data-group-id="3060442903-3">{</span><span class="p" data-group-id="3060442903-3">}</span><span class="p" data-group-id="3060442903-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="create_user/1">
+
+    <span id="create_user/0"></span>
+
+  <div class="detail-header">
+    <a href="#create_user/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">create_user(attrs \\ %{})</h1>
+
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Creates a user.</p><h2 id="create_user/1-examples" class="section-heading"><a href="#create_user/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">create_user</span><span class="p" data-group-id="4342220356-1">(</span><span class="p" data-group-id="4342220356-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="4342220356-2">}</span><span class="p" data-group-id="4342220356-1">)</span><span class="w">
+</span><span class="p" data-group-id="4342220356-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4342220356-4">%</span><span class="nc" data-group-id="4342220356-4">User</span><span class="p" data-group-id="4342220356-4">{</span><span class="p" data-group-id="4342220356-4">}</span><span class="p" data-group-id="4342220356-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_user</span><span class="p" data-group-id="4342220356-5">(</span><span class="p" data-group-id="4342220356-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="4342220356-6">}</span><span class="p" data-group-id="4342220356-5">)</span><span class="w">
+</span><span class="p" data-group-id="4342220356-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4342220356-8">%</span><span class="nc" data-group-id="4342220356-8">Ecto.Changeset</span><span class="p" data-group-id="4342220356-8">{</span><span class="p" data-group-id="4342220356-8">}</span><span class="p" data-group-id="4342220356-7">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="delete_user/1">
+
+  <div class="detail-header">
+    <a href="#delete_user/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">delete_user(user)</h1>
+
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Deletes a user.</p><h2 id="delete_user/1-examples" class="section-heading"><a href="#delete_user/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">delete_user</span><span class="p" data-group-id="5190893556-1">(</span><span class="n">user</span><span class="p" data-group-id="5190893556-1">)</span><span class="w">
+</span><span class="p" data-group-id="5190893556-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5190893556-3">%</span><span class="nc" data-group-id="5190893556-3">User</span><span class="p" data-group-id="5190893556-3">{</span><span class="p" data-group-id="5190893556-3">}</span><span class="p" data-group-id="5190893556-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">delete_user</span><span class="p" data-group-id="5190893556-4">(</span><span class="n">user</span><span class="p" data-group-id="5190893556-4">)</span><span class="w">
+</span><span class="p" data-group-id="5190893556-5">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5190893556-6">%</span><span class="nc" data-group-id="5190893556-6">Ecto.Changeset</span><span class="p" data-group-id="5190893556-6">{</span><span class="p" data-group-id="5190893556-6">}</span><span class="p" data-group-id="5190893556-5">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="get_user!/1">
+
+  <div class="detail-header">
+    <a href="#get_user!/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">get_user!(id)</h1>
+
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Gets a single user.</p><p>Raises <a href="https://hexdocs.pm/ecto/3.12.5/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if the User does not exist.</p><h2 id="get_user!/1-examples" class="section-heading"><a href="#get_user!/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">get_user!</span><span class="p" data-group-id="2499953202-1">(</span><span class="mi">123</span><span class="p" data-group-id="2499953202-1">)</span><span class="w">
+</span><span class="p" data-group-id="2499953202-2">%</span><span class="nc" data-group-id="2499953202-2">User</span><span class="p" data-group-id="2499953202-2">{</span><span class="p" data-group-id="2499953202-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_user!</span><span class="p" data-group-id="2499953202-3">(</span><span class="mi">456</span><span class="p" data-group-id="2499953202-3">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="list_users/0">
+
+  <div class="detail-header">
+    <a href="#list_users/0" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">list_users()</h1>
+
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Returns the list of users.</p><h2 id="list_users/0-examples" class="section-heading"><a href="#list_users/0-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">list_users</span><span class="p" data-group-id="5009415862-1">(</span><span class="p" data-group-id="5009415862-1">)</span><span class="w">
+</span><span class="p" data-group-id="5009415862-2">[</span><span class="p" data-group-id="5009415862-3">%</span><span class="nc" data-group-id="5009415862-3">User</span><span class="p" data-group-id="5009415862-3">{</span><span class="p" data-group-id="5009415862-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="5009415862-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="update_user/2">
+
+  <div class="detail-header">
+    <a href="#update_user/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">update_user(user, attrs)</h1>
+
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Updates a user.</p><h2 id="update_user/2-examples" class="section-heading"><a href="#update_user/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">update_user</span><span class="p" data-group-id="4762498032-1">(</span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4762498032-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="4762498032-2">}</span><span class="p" data-group-id="4762498032-1">)</span><span class="w">
+</span><span class="p" data-group-id="4762498032-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4762498032-4">%</span><span class="nc" data-group-id="4762498032-4">User</span><span class="p" data-group-id="4762498032-4">{</span><span class="p" data-group-id="4762498032-4">}</span><span class="p" data-group-id="4762498032-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_user</span><span class="p" data-group-id="4762498032-5">(</span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4762498032-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="4762498032-6">}</span><span class="p" data-group-id="4762498032-5">)</span><span class="w">
+</span><span class="p" data-group-id="4762498032-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4762498032-8">%</span><span class="nc" data-group-id="4762498032-8">Ecto.Changeset</span><span class="p" data-group-id="4762498032-8">{</span><span class="p" data-group-id="4762498032-8">}</span><span class="p" data-group-id="4762498032-7">}</span></code></pre>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+    <footer class="footer">
+      <p>
+
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
+
+            <a href="users_service.epub" title="ePub version">
+              Download ePub version
+            </a>
+
+        </span>
+      </p>
+
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.1) for the
+
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+      </p>
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>
